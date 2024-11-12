@@ -26,13 +26,6 @@ print(f"Mean Squared Error: {mse}")
 print("Coefficients:", model.coef_)
 print("Intercept:", model.intercept_)
 
-plt.scatter(y_test, y_pred)
-plt.xlabel("Actual Prices")
-plt.ylabel("Predicted Prices")
-plt.title("Actual vs. Predicted Prices")
-plt.plot([min(y_test), max(y_test)], [min(y_test), max(y_test)], color='red')  # Line of perfect prediction
-plt.show()
-
 square_footage = float(input("Enter the square footage: ")) 
 num_bedrooms = int(input("Enter the number of bedrooms: ")) 
 num_bathrooms = int(input("Enter the number of bathrooms: "))
@@ -40,3 +33,11 @@ num_bathrooms = int(input("Enter the number of bathrooms: "))
 input_features = [[square_footage, num_bedrooms, num_bathrooms]]
 predicted_price = model.predict(input_features)
 print(f'The predicted price of the house is: {predicted_price[0]}')
+
+plt.scatter(y_test, y_pred)
+plt.xlabel("Actual Prices")
+plt.ylabel("Predicted Prices")
+plt.title("Actual vs. Predicted Prices")
+plt.plot([min(y_test), max(y_test)], [min(y_test), max(y_test)], color='red')  # Line of perfect prediction
+plt.show()
+
